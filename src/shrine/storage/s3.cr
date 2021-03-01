@@ -80,6 +80,8 @@ class Shrine
           region: client.@region,
           object: "/#{object_key(id)}",
           bucket: bucket,
+          host_name: options[:host_name],
+          additional_options: options[:additional_options]
         )
 
         url = Awscr::S3::Presigned::Url.new(presigned_options)
